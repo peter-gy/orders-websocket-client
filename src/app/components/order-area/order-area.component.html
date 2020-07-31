@@ -1,0 +1,8 @@
+<div class="clr-row">
+    <kendo-chat 
+        [messages]="feed | async"
+        [user]="customer"
+        (sendMessage)="sendMessage($event)"
+    >
+    </kendo-chat>
+</div>

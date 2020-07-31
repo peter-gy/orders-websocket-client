@@ -28,9 +28,18 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
+              "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+              "node_modules/@clr/icons/clr-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -92,6 +101,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +135,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "orders-websocket-client"
 }
