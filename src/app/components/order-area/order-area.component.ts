@@ -14,17 +14,17 @@ export class OrderAreaComponent {
   public feed: Observable<Message[]>
   public readonly waiter: User = {
     id: 'waiter',
-    name: 'Jean',
+    name: 'Jean the Waiter',
     avatarUrl: 'https://avatars.dicebear.com/api/male/best-waiter.svg?mood[]=happy'
   };
   public readonly cook: User = {
     id: 'cook',
-    name: 'Gordon',
+    name: 'Gordon the Ramsey',
     avatarUrl: 'https://avatars.dicebear.com/api/male/best-cook.svg?mood[]=happy'
   };
   public readonly customer: User = {
     id: 'customer',
-    name: 'You',
+    name: 'You the Customer',
     avatarUrl: 'https://avatars.dicebear.com/api/male/best-customer.svg?mood[]=happy'
   };
 
