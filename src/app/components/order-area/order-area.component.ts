@@ -33,10 +33,29 @@ export class OrderAreaComponent {
   constructor(private websocketService: WebsocketService) {
     const introduction: Message = {
       author: this.waiter,
+      timestamp: new Date(),
+      text: 'Welcome to our online order-system! I will be your waiter today.'
+    }
+
+    const headsUp0: Message = {
+      author: this.waiter,
+      timestamp: new Date(),
+      text: 'Just a quick heads-up: I am extremely dedicated to my job. That means that no matter what you type to me, I will send it to our cook immediately as an order to prepare it.'
+    }
+
+    const headsUp1: Message = {
+      author: this.waiter,
+      timestamp: new Date(),
+      text: "Don't say I didn't warn you..."
+    }
+
+    const orderPrompt: Message = {
+      author: this.waiter,
+      timestamp: new Date(),
       suggestedActions: [
         {
           type: 'reply',
-          value: 'Oysters' 
+          value: 'Körömpörkölt' 
         },
         {
           type: 'reply',
@@ -51,12 +70,11 @@ export class OrderAreaComponent {
           value: 'Csülök' 
         }
       ],
-      timestamp: new Date(),
-      text: 'Welcome to our online order-system! I will be your waiter today. What do you wish to order?'
+      text: 'So... what would you like to eat today? Here are a few healthy options to try:'
     }
 
     this.feed = merge(
-      from([introduction]),
+      from([introduction, headsUp0, headsUp1, orderPrompt]),
       this.localMessages,
       this.websocketService.registeredOrderResponses.pipe(
         map((response): Message => ({
